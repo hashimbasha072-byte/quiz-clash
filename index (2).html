@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#111127"><title>Quiz Clash — Play together</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="glow glow-a"></div><div class="glow glow-b"></div>
+<header><a class="brand" href="/"><span class="brand-icon">⚡</span> QUIZ<span>CLASH</span></a><span class="top-note">THINK FAST. PLAY TOGETHER.</span></header>
+<main>
+<section id="home" class="panel home">
+  <div class="eyebrow"><span class="live-dot"></span> REAL-TIME MULTIPLAYER QUIZ</div>
+  <h1>Challenge your<br><span class="gradient">brain squad.</span></h1>
+  <p class="sub">Bring your friends. Pick your answers. Claim the crown.</p>
+  <label class="field-label" for="playerName">YOUR PLAYER NAME</label>
+  <input id="playerName" maxlength="18" placeholder="Enter your name" autocomplete="nickname">
+  <div class="actions"><button id="createBtn" class="primary">Create a room <span>↗</span></button><div class="join-row"><input id="roomCode" maxlength="5" placeholder="ROOM CODE" autocapitalize="characters"><button id="joinBtn" class="secondary">Join room</button></div></div>
+  <div id="homeError" class="error" role="alert"></div>
+  <div class="feature-row"><span>👥 2–6 players</span><span>⏱ 15 sec per question</span><span>🏆 Live scores</span></div>
+</section>
+<section id="lobby" class="panel hidden">
+  <div class="eyebrow"><span class="live-dot"></span> ROOM LOBBY</div><h2>You're in the game.</h2>
+  <p class="sub">Share this code with your friends so they can join.</p>
+  <div class="room-code"><span id="lobbyCode">-----</span><button id="copyBtn" class="copy">Copy code</button></div>
+  <div class="section-head"><span>PLAYERS</span><span id="playerCount">0 / 6</span></div>
+  <div id="players" class="players"></div>
+  <p id="hostHint" class="hint"></p><button id="startBtn" class="primary wide hidden">Start the clash <span>⚡</span></button>
+  <div id="lobbyError" class="error"></div>
+</section>
+<section id="game" class="panel hidden">
+  <div class="game-top"><span class="pill" id="roundLabel">QUESTION 1 / 8</span><span class="timer" id="timer">15</span></div>
+  <div class="progress"><div id="progressBar"></div></div>
+  <h2 id="questionText" class="question">Question goes here?</h2>
+  <div id="choices" class="choices"></div>
+  <div class="game-bottom"><span id="answerStatus">Choose your answer</span><span id="answeredCount">0 answered</span></div>
+  <div id="reveal" class="reveal hidden"></div>
+  <div class="leaderboard"><div class="section-head"><span>LIVE LEADERBOARD</span><span>POINTS</span></div><div id="gamePlayers"></div></div>
+</section>
+<section id="finished" class="panel hidden">
+  <div class="trophy">🏆</div><div class="eyebrow centered">THE CLASH IS OVER</div><h1 class="final-title">Victory<br><span class="gradient">looks good on you.</span></h1>
+  <div id="winnerBox" class="winner"></div><div class="leaderboard"><div class="section-head"><span>FINAL STANDINGS</span><span>POINTS</span></div><div id="finalPlayers"></div></div>
+  <button id="playAgain" class="primary wide">Play another round ↗</button>
+</section>
+</main>
+<footer>Made for friendly rivalries <span>✦</span> Quiz Clash</footer>
+<script src="/static/app.js"></script>
+</body></html>
